@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Aplicativo de Notas</string>
+    <string name="enviar">Salvar</string>
+    <string name="limpar">Limpar</string>
+    <string name="texto_inicial">Digite sua nota aqui!</string>
+    <string name="textoTelaInicial">Registrar Nota</string>
+    <string name="textoVisualziar">Visualizar Notas</string>
+</resources>

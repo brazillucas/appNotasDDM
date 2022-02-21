@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "366930064701",
+    "project_id": "aplicativonotasddm",
+    "storage_bucket": "aplicativonotasddm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366930064701:android:e01dacd487f142386a8154",
+        "android_client_info": {
+          "package_name": "com.example.notas_ddm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366930064701-vjnn1sdl1dh26s995m637utvhn34evq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPuHAHtl1SzWKP2IcnXs3tHHygsHuF1o4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366930064701-vjnn1sdl1dh26s995m637utvhn34evq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
