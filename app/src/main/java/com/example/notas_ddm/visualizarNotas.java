@@ -19,9 +19,11 @@ import java.util.ArrayList;
 
 public class visualizarNotas extends AppCompatActivity {
 
+    //Criação da conexão com o banco de dados
     private DatabaseReference referenciaDBV = FirebaseDatabase.getInstance().getReference();
     private DatabaseReference minhasNotas = referenciaDBV.child("notas");
 
+    //Declaração da ListView que receberá os dados resgatados do database
     private ListView listaNotas;
     private ArrayList<String> anotacoes;
 
@@ -31,6 +33,7 @@ public class visualizarNotas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizar_notas);
+
 
         anotacoes = new ArrayList<>();
 
@@ -48,12 +51,13 @@ public class visualizarNotas extends AppCompatActivity {
                     anotacoes.add(notes.getTexto());
                 }
 
-                //ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_activated_2,android.R.id.text1,anotacoes);
+                //Exibe as notas resgatadas
                 ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getApplicationContext(), R.layout.row,android.R.id.text1,anotacoes);
                 listaNotas.setAdapter(adaptador);
 
             }
 
+            //Em caso de erro, o sistema apresenta um Toast avisando que não foi possível listar as notas
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(getApplicationContext(), "Erro ao listar notas" + error, Toast.LENGTH_SHORT).show();

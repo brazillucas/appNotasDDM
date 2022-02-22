@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Declaração dos objetos dos templates
         //Caixa de texto
         this.caixaTextoInicial = findViewById(R.id.caixaTextoInicial);
         //Botões
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //Valida se a caixa de texto está vazia
+                //Caso esteja preenchida, enviar os dados para o database
                 if (!Objects.requireNonNull(caixaTextoInicial.getText()).toString().equals("")) {
                     Notas n = new Notas();
 
@@ -62,13 +65,17 @@ public class MainActivity extends AppCompatActivity {
 
                     nota.push().setValue(n);
 
+                    caixaTextoInicial.setText("");
+
                     Toast.makeText(getApplicationContext(), "NOTA SALVA COM SUCESSO!", Toast.LENGTH_SHORT).show();
                 } else{
+                    //Caso o campo de texto esteja vazio, apresenta um Toast para avisar que a nota está fazia
                     Toast.makeText(getApplicationContext(), "DIGITE UMA NOTA PARA SALVAR!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+        //Ao clicar, leva para a tela de visualização das notas já salvas
         btnVisualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,27 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        /*usuario.signInWithEmailAndPassword( "lcc@aluno.ifnmg.edu.br", "123456").addOnCompleteListener(
-                MainActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-
-                            Toast.makeText(getApplicationContext(), "Login Efetuado com Sucesso", Toast.LENGTH_SHORT).show();
-                        }else {
-                            Toast.makeText(getApplicationContext(), "ERRO AO EFETUAR LOGIN", Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-                }
-        );*/
-
-        /*if(usuario.getCurrentUser() != null){
-            Toast.makeText(getApplicationContext(), "Usuário Logado", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(getApplicationContext(), "Não há um usuário logado", Toast.LENGTH_SHORT).show();
-        }*/
 
 
     }
